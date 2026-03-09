@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Consultation - PragAIti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-text">PragAIti</span>
+            <span class="nav-subtitle">New Consultation</span>
+        </div>
+        <div class="nav-actions">
+            <a href="doctor-dashboard.html" class="btn btn-sm btn-outline">Back to Dashboard</a>
+        </div>
+    </nav>
+    
+    <div class="consultation-container">
+        <div class="consultation-header">
+            <h1>New Consultation</h1>
+            <div class="patient-info-bar">
+                <span><strong>Patient:</strong> Rajesh Kumar</span>
+                <span><strong>Age:</strong> 45</span>
+                <span><strong>ID:</strong> PT2024001</span>
+                <span><strong>Date:</strong> <span id="currentDate"></span></span>
+            </div>
+        </div>
+        
+        <div class="consultation-content">
+            <div class="consultation-grid">
+                <!-- Vitals Section -->
+                <div class="card">
+                    <h2>Vitals</h2>
+                    <div class="vitals-grid">
+                        <div class="vital-item">
+                            <label>Blood Pressure</label>
+                            <input type="text" class="input-field" placeholder="120/80 mmHg">
+                        </div>
+                        <div class="vital-item">
+                            <label>Heart Rate</label>
+                            <input type="text" class="input-field" placeholder="72 bpm">
+                        </div>
+                        <div class="vital-item">
+                            <label>Temperature</label>
+                            <input type="text" class="input-field" placeholder="98.6°F">
+                        </div>
+                        <div class="vital-item">
+                            <label>SpO2</label>
+                            <input type="text" class="input-field" placeholder="98%">
+                        </div>
+                        <div class="vital-item">
+                            <label>Weight</label>
+                            <input type="text" class="input-field" placeholder="75 kg">
+                        </div>
+                        <div class="vital-item">
+                            <label>Height</label>
+                            <input type="text" class="input-field" placeholder="170 cm">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chief Complaints -->
+                <div class="card">
+                    <h2>Chief Complaints</h2>
+                    <textarea class="input-field" rows="4" placeholder="Enter patient's main complaints and symptoms"></textarea>
+                </div>
+                
+                <!-- Clinical Examination -->
+                <div class="card">
+                    <h2>Clinical Examination</h2>
+                    <textarea class="input-field" rows="5" placeholder="Physical examination findings"></textarea>
+                </div>
+                
+                <!-- Diagnosis -->
+                <div class="card">
+                    <h2>Diagnosis</h2>
+                    <input type="text" class="input-field" placeholder="Primary diagnosis">
+                    <div class="form-group" style="margin-top: 12px;">
+                        <label>ICD-10 Code (Optional)</label>
+                        <input type="text" class="input-field" placeholder="Enter ICD code">
+                    </div>
+                </div>
+                
+                <!-- Prescription -->
+                <div class="card prescription-section">
+                    <h2>Prescription</h2>
+                    <div id="medicineList">
+                        <div class="medicine-entry">
+                            <input type="text" class="input-field" placeholder="Medicine name">
+                            <input type="text" class="input-field" placeholder="Dosage (e.g., 500mg)">
+                            <input type="text" class="input-field" placeholder="Frequency (e.g., 2x daily)">
+                            <input type="text" class="input-field" placeholder="Duration (e.g., 5 days)">
+                        </div>
+                    </div>
+                    <button class="btn btn-sm btn-outline" onclick="addMedicine()">+ Add Medicine</button>
+                </div>
+                
+                <!-- Tests Advised -->
+                <div class="card">
+                    <h2>Tests Advised</h2>
+                    <textarea class="input-field" rows="3" placeholder="Enter recommended laboratory tests and investigations"></textarea>
+                </div>
+                
+                <!-- Follow-up -->
+                <div class="card">
+                    <h2>Follow-up & Instructions</h2>
+                    <div class="form-group">
+                        <label>Follow-up Date</label>
+                        <input type="date" class="input-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Special Instructions</label>
+                        <textarea class="input-field" rows="3" placeholder="Diet, lifestyle, precautions"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Doctor Notes -->
+                <div class="card">
+                    <h2>Doctor Notes (Private)</h2>
+                    <textarea class="input-field" rows="4" placeholder="Internal notes for future reference"></textarea>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="consultation-actions">
+                <button class="btn btn-outline" onclick="saveDraft()">Save as Draft</button>
+                <button class="btn btn-primary btn-large" onclick="submitConsultation()">
+                    Submit Consultation & Generate Record
+                </button>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h3>Consultation Submitted Successfully</h3>
+                <p>Structured record has been generated and added to patient history</p>
+                <button class="btn btn-primary" onclick="window.location.href='doctor-dashboard.html'">
+                    Back to Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-IN');
+    </script>
+</body>
+</html>

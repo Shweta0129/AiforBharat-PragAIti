@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - PragAIti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-text">PragAIti</span>
+        </div>
+        <div class="nav-actions">
+            <button class="btn btn-sm" id="langToggle">🌐 हिंदी</button>
+            <a href="landing.html" class="btn btn-sm btn-outline">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1 data-en="Patient Dashboard" data-hi="रोगी डैशबोर्ड">Patient Dashboard</h1>
+            <p class="patient-name">Rajesh Kumar • ID: PT2024001</p>
+        </div>
+        
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="summary-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <span>📊</span>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-label" data-en="Health Score" data-hi="स्वास्थ्य स्कोर">Health Score</div>
+                    <div class="summary-value">78/100</div>
+                </div>
+            </div>
+            
+            <div class="summary-card">
+                <div class="summary-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <span>🏥</span>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-label" data-en="Total Visits" data-hi="कुल यात्राएं">Total Visits</div>
+                    <div class="summary-value">12</div>
+                </div>
+            </div>
+            
+            <div class="summary-card">
+                <div class="summary-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <span>💊</span>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-label" data-en="Active Medicines" data-hi="सक्रिय दवाएं">Active Medicines</div>
+                    <div class="summary-value">3</div>
+                </div>
+            </div>
+            
+            <div class="summary-card">
+                <div class="summary-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <span>⚠️</span>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-label" data-en="Risk Level" data-hi="जोखिम स्तर">Risk Level</div>
+                    <div class="summary-value">Monitor</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <!-- Health Score Card -->
+            <div class="card health-score-card">
+                <h2 data-en="Health Score" data-hi="स्वास्थ्य स्कोर">Health Score</h2>
+                <div class="score-display">
+                    <div class="score-number">78</div>
+                    <div class="score-max">/ 100</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%"></div>
+                </div>
+                <div class="risk-badge badge-warning">
+                    <span data-en="Risk Level: MONITOR" data-hi="जोखिम स्तर: निगरानी">Risk Level: MONITOR</span>
+                </div>
+            </div>
+            
+            <!-- AI Health Summary -->
+            <div class="card ai-summary-card">
+                <h2 data-en="AI Health Summary" data-hi="एआई स्वास्थ्य सारांश">AI Health Summary</h2>
+                <div class="ai-insight">
+                    <div class="insight-icon">🤖</div>
+                    <p data-en="AI analysis indicates recurring respiratory infection patterns across recent visits." 
+                       data-hi="एआई विश्लेषण हाल की यात्राओं में आवर्ती श्वसन संक्रमण पैटर्न का संकेत देता है।">
+                        AI analysis indicates recurring respiratory infection patterns across recent visits.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- AI Preventive Recommendations -->
+            <div class="card recommendations-card">
+                <h2 data-en="AI Preventive Recommendations" data-hi="एआई निवारक सिफारिशें">AI Preventive Recommendations</h2>
+                <div class="recommendations-list">
+                    <div class="recommendation-item">
+                        <span class="rec-icon">🔬</span>
+                        <div class="rec-content">
+                            <div class="rec-title" data-en="Schedule lipid profile test" data-hi="लिपिड प्रोफाइल परीक्षण निर्धारित करें">Schedule lipid profile test</div>
+                            <div class="rec-desc" data-en="Based on your age and health history" data-hi="आपकी उम्र और स्वास्थ्य इतिहास के आधार पर">Based on your age and health history</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="rec-icon">🩺</span>
+                        <div class="rec-content">
+                            <div class="rec-title" data-en="Monitor blood pressure weekly" data-hi="साप्ताहिक रक्तचाप की निगरानी करें">Monitor blood pressure weekly</div>
+                            <div class="rec-desc" data-en="Track BP trends for early detection" data-hi="शीघ्र पता लगाने के लिए बीपी रुझान ट्रैक करें">Track BP trends for early detection</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="rec-icon">🏃</span>
+                        <div class="rec-content">
+                            <div class="rec-title" data-en="Maintain regular exercise" data-hi="नियमित व्यायाम बनाए रखें">Maintain regular exercise</div>
+                            <div class="rec-desc" data-en="30 minutes daily for cardiovascular health" data-hi="हृदय स्वास्थ्य के लिए दैनिक 30 मिनट">30 minutes daily for cardiovascular health</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="rec-icon">🥗</span>
+                        <div class="rec-content">
+                            <div class="rec-title" data-en="Follow balanced diet plan" data-hi="संतुलित आहार योजना का पालन करें">Follow balanced diet plan</div>
+                            <div class="rec-desc" data-en="Reduce sodium intake for BP control" data-hi="बीपी नियंत्रण के लिए सोडियम का सेवन कम करें">Reduce sodium intake for BP control</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preventive Alerts -->
+            <div class="card alerts-card">
+                <h2 data-en="Preventive Alerts" data-hi="निवारक चेतावनी">Preventive Alerts</h2>
+                <div class="alert-list">
+                    <div class="alert-item alert-info">
+                        <span class="alert-icon">💡</span>
+                        <span data-en="AI recommends a lipid profile test" data-hi="एआई लिपिड प्रोफाइल परीक्षण की सिफारिश करता है">AI recommends a lipid profile test</span>
+                    </div>
+                    <div class="alert-item alert-warning">
+                        <span class="alert-icon">⚠️</span>
+                        <span data-en="Recurring fever pattern detected" data-hi="आवर्ती बुखार पैटर्न का पता चला">Recurring fever pattern detected</span>
+                    </div>
+                    <div class="alert-item alert-success">
+                        <span class="alert-icon">✓</span>
+                        <span data-en="Vaccination schedule up to date" data-hi="टीकाकरण कार्यक्रम अद्यतन">Vaccination schedule up to date</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visit Timeline -->
+            <div class="card timeline-card">
+                <h2 data-en="Visit Timeline" data-hi="यात्रा समयरेखा">Visit Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">June 2024</div>
+                            <div class="timeline-title">Viral Infection</div>
+                            <div class="timeline-desc">Dr. Sharma • Fever, cough, body ache</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">March 2024</div>
+                            <div class="timeline-title">BP Check</div>
+                            <div class="timeline-desc">Dr. Patel • Blood pressure monitoring</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">January 2024</div>
+                            <div class="timeline-title">Fever Consultation</div>
+                            <div class="timeline-desc">Dr. Sharma • High fever, throat infection</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Medication History -->
+            <div class="card medication-card">
+                <h2 data-en="Medication History" data-hi="दवा इतिहास">Medication History</h2>
+                <div class="medication-list">
+                    <div class="medication-item">
+                        <div class="med-name">Paracetamol 500mg</div>
+                        <div class="med-details">3x daily • 5 days • June 2024</div>
+                    </div>
+                    <div class="medication-item">
+                        <div class="med-name">Azithromycin 250mg</div>
+                        <div class="med-details">1x daily • 3 days • June 2024</div>
+                    </div>
+                    <div class="medication-item">
+                        <div class="med-name">Amlodipine 5mg</div>
+                        <div class="med-details">1x daily • Ongoing • March 2024</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upload Prescription -->
+            <div class="card upload-card">
+                <h2 data-en="Upload Prescription" data-hi="प्रिस्क्रिप्शन अपलोड करें">Upload Prescription</h2>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="prescriptionInput" accept="image/*" hidden>
+                    <div class="upload-placeholder">
+                        <div class="upload-icon">📄</div>
+                        <p data-en="Click or drag to upload prescription" data-hi="प्रिस्क्रिप्शन अपलोड करने के लिए क्लिक करें">Click or drag to upload prescription</p>
+                        <button class="btn btn-primary" onclick="document.getElementById('prescriptionInput').click()">
+                            <span data-en="Choose File" data-hi="फ़ाइल चुनें">Choose File</span>
+                        </button>
+                    </div>
+                    <div class="upload-preview" id="uploadPreview" style="display: none;">
+                        <img id="previewImage" src="" alt="Prescription preview">
+                        <button class="btn btn-sm btn-outline" id="removeImage">Remove</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Share Medical History -->
+            <div class="card share-card">
+                <h2 data-en="Share Medical History" data-hi="चिकित्सा इतिहास साझा करें">Share Medical History</h2>
+                <p class="share-desc" data-en="Generate a secure link to share your medical history with doctors" 
+                   data-hi="डॉक्टरों के साथ अपना चिकित्सा इतिहास साझा करने के लिए एक सुरक्षित लिंक उत्पन्न करें">
+                    Generate a secure link to share your medical history with doctors
+                </p>
+                <button class="btn btn-primary btn-large" onclick="generateShareLink()">
+                    <span data-en="Generate Share Link" data-hi="शेयर लिंक जनरेट करें">Generate Share Link</span>
+                </button>
+                <div id="shareResult" style="display: none; margin-top: 1rem;">
+                    <div class="share-qr">
+                        <div class="qr-placeholder">
+                            <svg width="150" height="150" viewBox="0 0 150 150">
+                                <rect width="150" height="150" fill="#f3f4f6"/>
+                                <rect x="20" y="20" width="30" height="30" fill="#000"/>
+                                <rect x="100" y="20" width="30" height="30" fill="#000"/>
+                                <rect x="20" y="100" width="30" height="30" fill="#000"/>
+                                <rect x="60" y="60" width="30" height="30" fill="#000"/>
+                                <rect x="100" y="100" width="30" height="30" fill="#000"/>
+                            </svg>
+                        </div>
+                        <p class="share-link-text">https://pragaiti.health/share/PT2024001-ABC123</p>
+                        <button class="btn btn-sm btn-outline" onclick="copyShareLink()">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

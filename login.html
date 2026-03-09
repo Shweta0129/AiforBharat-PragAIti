@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PragAIti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="20" fill="#4F46E5" opacity="0.1"/>
+                        <path d="M24 14L28 22H20L24 14Z" fill="#4F46E5"/>
+                        <circle cx="24" cy="28" r="4" fill="#10B981"/>
+                        <path d="M16 32C16 28 19 26 24 26C29 26 32 28 32 32" stroke="#4F46E5" stroke-width="2"/>
+                    </svg>
+                    <span>PragAIti</span>
+                </div>
+                <h1>Welcome Back</h1>
+                <p>Login to access your healthcare dashboard</p>
+            </div>
+            
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label>Select Role</label>
+                    <div class="role-selector">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="patient" checked>
+                            <div class="role-card">
+                                <span class="role-icon">👤</span>
+                                <span class="role-label">Patient</span>
+                            </div>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="doctor">
+                            <div class="role-card">
+                                <span class="role-icon">👨‍⚕️</span>
+                                <span class="role-label">Doctor</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" class="input-field" placeholder="Enter your phone number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="input-field" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large btn-block">
+                    Login
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                <p><a href="landing.html">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

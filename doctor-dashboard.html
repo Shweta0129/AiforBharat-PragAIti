@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - PragAIti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-text">PragAIti</span>
+            <span class="nav-subtitle">Doctor Portal</span>
+        </div>
+        <div class="nav-actions">
+            <a href="landing.html" class="btn btn-sm btn-outline">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="header-content">
+                <div>
+                    <h1>Doctor Dashboard</h1>
+                    <p class="doctor-name">Dr. Priya Sharma • Cardiology</p>
+                </div>
+                <div class="doctor-profile-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <div class="doctor-info-name">Dr. Priya Sharma</div>
+                        <div class="doctor-info-spec">Cardiology Specialist</div>
+                        <div class="doctor-info-hospital">Apollo Hospital, Delhi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <!-- Search Patient -->
+            <div class="card search-card">
+                <h2>Search Patient</h2>
+                <div class="search-form">
+                    <input type="text" id="patientSearch" placeholder="Enter phone number or patient ID" class="input-field">
+                    <button class="btn btn-primary" onclick="loadPatient()">Load Patient Record</button>
+                </div>
+            </div>
+            
+            <!-- Patient Profile -->
+            <div class="card profile-card" id="patientProfile" style="display: none;">
+                <h2>Patient Profile</h2>
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <label>Name</label>
+                        <div class="profile-value" id="patientName">Rajesh Kumar</div>
+                    </div>
+                    <div class="profile-item">
+                        <label>Age</label>
+                        <div class="profile-value" id="patientAge">45 years</div>
+                    </div>
+                    <div class="profile-item">
+                        <label>Gender</label>
+                        <div class="profile-value" id="patientGender">Male</div>
+                    </div>
+                    <div class="profile-item">
+                        <label>Blood Group</label>
+                        <div class="profile-value" id="patientBlood">O+</div>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <label>Chronic Conditions</label>
+                    <div class="tag-list">
+                        <span class="tag tag-warning">Hypertension</span>
+                        <span class="tag tag-info">Type 2 Diabetes</span>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <label>Allergies</label>
+                    <div class="tag-list">
+                        <span class="tag tag-danger">Penicillin</span>
+                        <span class="tag tag-danger">Sulfa drugs</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Patient Summary -->
+            <div class="card patient-summary-card" id="patientSummary" style="display: none;">
+                <h2>Quick Patient Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-item-icon">👤</div>
+                        <div class="summary-item-content">
+                            <label>Age</label>
+                            <div class="summary-item-value">45 years</div>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-item-icon">⚕️</div>
+                        <div class="summary-item-content">
+                            <label>Chronic Conditions</label>
+                            <div class="summary-item-value">Hypertension, Type 2 Diabetes</div>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-item-icon">⚠️</div>
+                        <div class="summary-item-content">
+                            <label>Allergies</label>
+                            <div class="summary-item-value">Penicillin, Sulfa drugs</div>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-item-icon">💊</div>
+                        <div class="summary-item-content">
+                            <label>Current Medications</label>
+                            <div class="summary-item-value">Amlodipine 5mg, Metformin 500mg</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Risk Explanation -->
+            <div class="card ai-risk-card" id="aiRiskCard" style="display: none;">
+                <h2>AI Risk Analysis</h2>
+                <div class="risk-analysis">
+                    <div class="risk-score-display">
+                        <div class="risk-gauge">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="#e5e7eb" stroke-width="10"/>
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="#f59e0b" stroke-width="10" 
+                                        stroke-dasharray="220 314" transform="rotate(-90 60 60)"/>
+                            </svg>
+                            <div class="risk-score-text">70%</div>
+                        </div>
+                        <div class="risk-label">Moderate Risk</div>
+                    </div>
+                    <div class="risk-insights">
+                        <div class="insight-item">
+                            <span class="insight-bullet">•</span>
+                            <p>AI analysis suggests early hypertension risk due to repeated elevated blood pressure readings</p>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-bullet">•</span>
+                            <p>Blood sugar levels trending upward over last 3 months</p>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-bullet">•</span>
+                            <p>Recommend lifestyle modification and regular monitoring</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Health Recommendations -->
+            <div class="card ai-recommendations-card" id="aiRecommendations" style="display: none;">
+                <h2>AI Health Recommendations</h2>
+                <div class="ai-rec-banner">
+                    <div class="ai-rec-icon">🤖</div>
+                    <div class="ai-rec-content">
+                        <h3>Early Hypertension Risk Detected</h3>
+                        <p>AI suggests early hypertension risk. Recommend lifestyle monitoring and regular BP checks.</p>
+                    </div>
+                </div>
+                <div class="ai-rec-list">
+                    <div class="ai-rec-item">
+                        <span class="ai-rec-number">1</span>
+                        <div class="ai-rec-text">
+                            <strong>Lifestyle Modifications</strong>
+                            <p>Advise patient to reduce sodium intake and increase physical activity</p>
+                        </div>
+                    </div>
+                    <div class="ai-rec-item">
+                        <span class="ai-rec-number">2</span>
+                        <div class="ai-rec-text">
+                            <strong>Regular Monitoring</strong>
+                            <p>Schedule BP checks twice weekly for next 4 weeks</p>
+                        </div>
+                    </div>
+                    <div class="ai-rec-item">
+                        <span class="ai-rec-number">3</span>
+                        <div class="ai-rec-text">
+                            <strong>Preventive Tests</strong>
+                            <p>Order lipid profile and HbA1c tests to assess cardiovascular risk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visit Timeline -->
+            <div class="card timeline-card" id="patientTimeline" style="display: none;">
+                <h2>Visit Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">June 15, 2024</div>
+                            <div class="timeline-title">Viral Infection</div>
+                            <div class="timeline-desc">
+                                <strong>Symptoms:</strong> Fever, cough, body ache<br>
+                                <strong>Diagnosis:</strong> Upper respiratory tract infection<br>
+                                <strong>Medicines:</strong> Paracetamol, Azithromycin
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">March 10, 2024</div>
+                            <div class="timeline-title">BP Check & Follow-up</div>
+                            <div class="timeline-desc">
+                                <strong>BP:</strong> 145/92 mmHg<br>
+                                <strong>Diagnosis:</strong> Hypertension monitoring<br>
+                                <strong>Medicines:</strong> Amlodipine 5mg
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">January 22, 2024</div>
+                            <div class="timeline-title">Fever Consultation</div>
+                            <div class="timeline-desc">
+                                <strong>Symptoms:</strong> High fever, throat pain<br>
+                                <strong>Diagnosis:</strong> Bacterial throat infection<br>
+                                <strong>Tests:</strong> CBC, Throat swab
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add Consultation -->
+            <div class="card consultation-card" id="consultationCard" style="display: none;">
+                <h2>Add Consultation</h2>
+                <form class="consultation-form" id="consultationForm">
+                    <div class="form-group">
+                        <label>Symptoms</label>
+                        <textarea class="input-field" rows="3" placeholder="Enter patient symptoms"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Diagnosis</label>
+                        <input type="text" class="input-field" placeholder="Enter diagnosis">
+                    </div>
+                    <div class="form-group">
+                        <label>Medicines</label>
+                        <textarea class="input-field" rows="3" placeholder="Medicine name, dosage, duration"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Tests Advised</label>
+                        <input type="text" class="input-field" placeholder="Enter recommended tests">
+                    </div>
+                    <div class="form-group">
+                        <label>Doctor Notes</label>
+                        <textarea class="input-field" rows="3" placeholder="Additional notes and observations"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-large" onclick="submitConsultation()">
+                        Generate Structured Record
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
